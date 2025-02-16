@@ -18,9 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/', function () {
-    return view('app');
+
+    return view('create');
 });
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('create1');
 });
