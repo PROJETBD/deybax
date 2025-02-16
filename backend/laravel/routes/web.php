@@ -25,3 +25,6 @@ Route::get('/', function () {
     return view('create1');
 });
 //routes
+Route::get('/', function () {
+    return view('login');
+});
