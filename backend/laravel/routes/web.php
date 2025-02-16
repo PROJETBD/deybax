@@ -18,10 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/', function () {
+
     return view('create');
 });
 
 Route::get('/', function () {
     return view('create1');
 });
-//routes
