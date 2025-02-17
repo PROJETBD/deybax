@@ -9,7 +9,7 @@
             <label for="candidat_id" class="form-label">Sélectionner un candidat</label>//Sélectionner un candidat
             <select name="candidat_id" class="form-control" required>
                 @foreach($candidats as $candidat)
-                    <option value="{{ $candidat->id }}">{{ $candidat->nom }} {{ $candidat->prenom }}</option>
+                    <option value="{{ $candidat->id }}">{{ $candidat->nom }} {{ $candidat->prenom }}</option>//Afficher le nom et le prénom du candidat
                 @endforeach
             </select>
         </div>

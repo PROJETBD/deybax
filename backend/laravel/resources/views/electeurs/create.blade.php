@@ -7,11 +7,11 @@
         @csrf
         <div class="mb-3">
             <label for="nom" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="nom" required>
+            <input type="text" class="form-control" name="nom" required>//Champ obligatoire
         </div>
         <div class="mb-3">
             <label for="prenom" class="form-label">Prénom</label>
-            <input type="text" class="form-control" name="prenom" required>
+            <input type="text" class="form-control" name="prenom" required>//Champ obligatoire
         </div>
         <button type="submit" class="btn btn-success">Ajouter</button>
     </form>
