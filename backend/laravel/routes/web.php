@@ -18,17 +18,16 @@ Route::get('/', function () {
 });
 Route::get('/', function () {
     return view('login');
-
+  });
 Route::get('/', function () {
-
     return view('create');
 });
-
 Route::get('/', function () {
-
+    return view('app');
+});
+Route::get('/', function () {
     return view('dashboard');
 });
-    
 Route::get('/', function () {
     return view('create1');
 });
