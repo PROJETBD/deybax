@@ -1,9 +1,18 @@
+
 // resources/views/auth/login.blade.php
 @extends('layouts.app')
 @section('title', 'Connexion')
 @section('content')
     <h1>Connexion</h1>
     <form action="{{ route('login') }}" method="POST">
+
+
+@extends('layouts.app')
+@section('title', 'Connexion')
+@section('content')
+    <h1>Connexion</h1> 
+    <form action="{{ route('login') }}" method="POST"> //
+
         @csrf
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
@@ -15,4 +24,8 @@
         </div>
         <button type="submit" class="btn btn-success">Se connecter</button>
     </form>
+
 @endsection
+
+@endsection
+
