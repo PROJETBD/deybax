@@ -28,7 +28,7 @@ Route::get('/', function () {
 
     return view('dashboard');
 });
-
+    
+Route::get('/', function () {
     return view('create1');
-master
 });
