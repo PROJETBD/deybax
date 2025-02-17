@@ -6,7 +6,7 @@
     <form action="{{ route('parrainages.store') }}" method="POST">//route('parrainages.store') permet de rediriger vers la route parrainages.store
         @csrf
         <div class="mb-3">
-            <label for="candidat_id" class="form-label">Sélectionner un candidat</label>
+            <label for="candidat_id" class="form-label">Sélectionner un candidat</label>//Sélectionner un candidat
             <select name="candidat_id" class="form-control" required>
                 @foreach($candidats as $candidat)
                     <option value="{{ $candidat->id }}">{{ $candidat->nom }} {{ $candidat->prenom }}</option>
