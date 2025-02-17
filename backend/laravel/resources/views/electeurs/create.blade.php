@@ -1,6 +1,6 @@
 // resources/views/electeurs/create.blade.php
 @extends('layouts.app')
-@section('title', 'Ajouter un Électeur')
+@section('title', 'Ajouter un Électeur')//Titre de la page
 @section('content')
     <h1>Ajouter un Électeur</h1>
     <form action="{{ route('electeurs.store') }}" method="POST">//route('electeurs.store') permet de rediriger vers la route electeurs.store
