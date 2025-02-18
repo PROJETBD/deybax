@@ -16,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+ adjarokhayadia
 Route::get('/', function () {
     return view('login');
+
+
+Route::get('/', function () {
+
+    return view('create');
+});
+
+Route::get('/', function () {
+    return view('create1');
+master
 });
