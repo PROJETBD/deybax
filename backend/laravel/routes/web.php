@@ -1,12 +1,5 @@
 <?php
-// routes/web.php
-use App\Http\Controllers\ElecteurController;
-use App\Http\Controllers\CandidatController;
-use App\Http\Controllers\ParrainageController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\HistoriqueUploadController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\ElecteurController;
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\ParrainController;
