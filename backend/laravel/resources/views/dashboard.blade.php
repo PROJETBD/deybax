@@ -10,7 +10,7 @@
 @section('title', 'Liste des Électeurs')
 @section('content')
     <h1>Liste des Électeurs</h1>
-    <a href="{{ route('electeurs.create') }}" class="btn btn-primary">Ajouter un électeur</a>
+    <a href="{{ route('electeurs.create') }}" class="btn btn-primary">Ajouter un électeur</a>//route('electeurs.create') permet de rediriger vers la route electeurs.create
     <table class="table table-striped mt-3">
         <thead>
             <tr>
