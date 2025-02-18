@@ -3,7 +3,7 @@
 @section('title', 'Ajouter un Candidat')
 @section('content')
     <h1>Ajouter un Candidat</h1>
-    <form action="{{ route('candidats.store') }}" method="POST">
+    <form action="{{ route('candidats.store') }}" method="POST">//route('candidats.store') permet de rediriger vers la route candidats.store
         @csrf
         <div class="mb-3">
             <label for="nom" class="form-label">Nom</label>
