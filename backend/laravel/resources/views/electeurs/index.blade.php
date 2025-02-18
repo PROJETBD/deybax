@@ -20,7 +20,7 @@
                     <td>{{ $electeur->nom }}</td>
                     <td>{{ $electeur->prenom }}</td>
                     <td>
-                        <a href="{{ route('electeurs.edit', $electeur->id) }}" class="btn btn-warning">Modifier</a>
+                        <a href="{{ route('electeurs.edit', $electeur->id) }}" class="btn btn-warning">Modifier</a>//route('electeurs.edit', $electeur->id) permet de rediriger vers la route electeurs.edit
                         <button class="btn btn-danger delete-btn" data-id="{{ $electeur->id }}">Supprimer</button>
                     </td>
                 </tr>
@@ -34,10 +34,10 @@
                 fetch(/electeurs/${id}, {
                     method: 'DELETE',
                     headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content//Récupérer le token CSRF
                     }
-                }).then(response => response.json())
-                  .then(data => alert(data.message));
+                }).then(response => response.json())//Convertir la réponse en JSON
+                  .then(data => alert(data.message));//Afficher un message d'alerte
             });
         });
     </script>

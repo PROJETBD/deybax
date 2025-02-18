@@ -3,7 +3,7 @@
 @section('title', 'Connexion')
 @section('content')
     <h1>Connexion</h1>
-    <form action="{{ route('login') }}" method="POST">
+    <form action="{{ route('login') }}" method="POST">//route('login') permet de rediriger vers la route login
         @csrf
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
