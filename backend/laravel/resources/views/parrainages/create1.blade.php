@@ -13,6 +13,6 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Parrainer</button>
+        <button type="submit" class="btn btn-primary">Parrainer</button>//Bouton pour parrainer
     </form>
 @endsection
