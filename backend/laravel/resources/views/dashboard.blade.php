@@ -27,11 +27,11 @@
                     <td>{{ $electeur->nom }}</td>
                     <td>{{ $electeur->prenom }}</td>
                     <td>
-                        <a href="{{ route('electeurs.edit', $electeur->id) }}" class="btn btn-warning">Modifier</a>
-                        <form action="{{ route('electeurs.destroy', $electeur->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('electeurs.edit', $electeur->id) }}" class="btn btn-warning">Modifier</a>//route('electeurs.edit', $electeur->id) permet de rediriger vers la route electeurs.edit
+                        <form action="{{ route('electeurs.destroy', $electeur->id) }}" method="POST" style="display:inline;">//route('electeurs.destroy', $electeur->id) permet de rediriger vers la route electeurs.destroy
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Confirmer la suppression ?')">Supprimer</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Confirmer la suppression ?')">Supprimer</button>//Bouton pour supprimer un électeur
                         </form>
                     </td>
                 </tr>
