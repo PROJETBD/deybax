@@ -9,14 +9,14 @@ return new class extends Migration {
     {
         Schema::create('electeurs', function (Blueprint $table) {
             $table->id();
-            $table->string('numero_cni')->unique();
-            $table->string('numero_electeur')->unique();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->date('date_naissance');
-            $table->string('lieu_naissance');
-            $table->enum('sexe', ['M', 'F']);
-            $table->string('bureau_vote');
+            $table->string('numero_cni')->unique();//numero carte nationale d'identité
+            $table->string('numero_electeur')->unique();//numero electeur
+            $table->string('nom');//nom
+            $table->string('prenom');//prenom
+            $table->date('date_naissance');//date de naissance
+            $table->string('lieu_naissance');//lieu de naissance
+            $table->enum('sexe', ['M', 'F']);//sexe
+            $table->string('bureau_vote');//bureau de vote
             $table->timestamps();
         });
     }
