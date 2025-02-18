@@ -38,5 +38,21 @@
             @endforeach
         </tbody>
     </table>
+
+    <canvas id="parrainageChart"></canvas>
+    <script>
+        const ctx = document.getElementById('parrainageChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Candidat A', 'Candidat B'],
+                datasets: [{
+                    label: 'Nombre de Parrainages',
+                    data: [50, 30],
+                    backgroundColor: ['blue', 'red']
+                }]
+            }
+        });
+    </script>
 @endsection
 
