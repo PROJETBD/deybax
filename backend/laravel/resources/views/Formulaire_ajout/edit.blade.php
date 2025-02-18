@@ -1,23 +1,19 @@
 @extends('layouts.app')
-@section('title', 'Accueil des Parrains')
+@section('title', 'Modifier un Électeur')
 @section('content')
-    <h1>Bienvenue sur la page des Parrains</h1>
-    <p>Vous pouvez ici parrainer un candidat et suivre vos parrainages.</p>
-    <a href="{{ route('parrainages.create') }}" class="btn btn-primary">Parrainer un candidat</a>
-    <h2 class="mt-4">Statistiques des parrainages</h2>
-    <canvas id="parrainageChart"></canvas>
-    <script>
-        const ctx = document.getElementById('parrainageChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Candidat A', 'Candidat B'],
-                datasets: [{
-                    label: 'Nombre de Parrainages',
-                    data: [50, 30],
-                    backgroundColor: ['blue', 'red']
-                }]
-            }
-        });
-    </script>
+    <h1>Modifier un Électeur</h1>
+    <form action="{{ route('electeurs.update', $electeur->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control" name="nom" value="{{ $electeur->nom }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="text" class="form-control" name="prenom" value="{{ $electeur->prenom }}" required>
+        </div>
+        <button type="submit" class="btn btn-success">Mettre à jour</button>
+    </form>
 @endsection
+
