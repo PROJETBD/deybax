@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DgeController;
@@ -66,6 +67,38 @@ Route::middleware(['auth'])->group(function () {
 
 
 //FIN ROUTES DGE
+=======
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ElecteurController;
+use App\Http\Controllers\CandidatController;
+use App\Http\Controllers\ParrainController;
+use App\Http\Controllers\ParrainageController;
+use App\Http\Controllers\PeriodeParrainageController;
+use App\Http\Controllers\HistoriqueUploadController;
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
+Route::get('/electeurs', [ElecteurController::class, 'index'])->name('electeurs.index');
+Route::post('/electeurs', [ElecteurController::class, 'store'])->name('electeurs.store');
+
+Route::get('/candidats', [CandidatController::class, 'index'])->name('candidats.index');
+Route::post('/candidats', [CandidatController::class, 'store'])->name('candidats.store');
+
+Route::get('/parrains', [ParrainController::class, 'index'])->name('parrains.index');
+Route::post('/parrains', [ParrainController::class, 'store'])->name('parrains.store');
+
+Route::get('/parrainages', [ParrainageController::class, 'index'])->name('parrainages.index');
+Route::post('/parrainages', [ParrainageController::class, 'store'])->name('parrainages.store');
+
+Route::get('/uploads', [HistoriqueUploadController::class, 'index'])->name('uploads.index');
+Route::post('/uploads', [HistoriqueUploadController::class, 'store'])->name('uploads.store');
+
+Route::get('/periodes', [PeriodeParrainageController::class, 'index'])->name('periodes.index');
+Route::post('/periodes', [PeriodeParrainageController::class, 'store'])->name('periodes.store');
+
+>>>>>>> master
 
 Route::get('/', function () {
     return view('welcome');
@@ -75,6 +108,7 @@ Route::get('/', function () {
 
 
 
+<<<<<<< HEAD
 
 //ROUTES CANDIDATS
 
@@ -245,3 +279,12 @@ Route::get('/parrainage/validation', [ParrainageController::class, 'showValidati
 
 // Validation du parrainage après réception du code de validation
 Route::post('/parrainage/validation', [ParrainageController::class, 'validerParrainage'])->name('parrainage.validation');
+=======
+// Routes d'authentification
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
+
+>>>>>>> master
