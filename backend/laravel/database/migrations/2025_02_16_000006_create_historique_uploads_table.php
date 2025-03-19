@@ -4,16 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+class CreateHistoriqueUploadsTable extends Migration
+{
     public function up()
     {
         Schema::create('historique_uploads', function (Blueprint $table) {
-            $table->id('id_upload');
-            $table->integer('utilisateur_id');
-            $table->timestamp('date_upload')->useCurrent();
-            $table->string('adresse_ip', 45);
-            $table->string('empreinte_sha256', 64);
-            $table->enum('status', ['succès', 'échec']);
+            $table->id();
+            $table->string('ip_address')->nullable()->default('127.0.0.1');
+            $table->string('file_hash')->nullable()->default(''); // Empreinte SHA256 du fichier
+            $table->timestamp('date_upload');
+            $table->enum('status', ['success', 'error', 'pending'])->default('pending');
+            $table->text('error_message')->nullable(); // Message d'erreur si échec
             $table->timestamps();
         });
     }
@@ -22,4 +23,4 @@ return new class extends Migration {
     {
         Schema::dropIfExists('historique_uploads');
     }
-};
+}
