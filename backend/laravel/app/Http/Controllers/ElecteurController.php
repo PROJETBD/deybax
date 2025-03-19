@@ -228,7 +228,7 @@ class ElecteurController extends Controller
                 ]
             );
         } catch (\Exception $e) {
-            Log::error("Erreur lors de l'envoi du SMS : " . $e->getMessage());// Log the error
+            Log::error("Erreur lors de l'envoi du SMS : " . $e->getMessage());// Log the errorr
         }
     }
 }

@@ -363,7 +363,7 @@ if ($periode && now()->greaterThanOrEqualTo($periode->date_debut)) {
             return back()->with('error', 'Code invalide ou expiré.');
         }
     
-        // ✅Supprimer seulement `newcode` après validation
+        // ✅Supprimer seulement `newcode` après validationn
         $codeValide->update(['newcode' => null, 'expiration' => null]);
     
         return redirect()->route('candidat.details', ['id' => $candidat->id]);

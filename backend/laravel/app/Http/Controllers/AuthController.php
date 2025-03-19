@@ -62,7 +62,7 @@ class AuthController extends Controller
         return back()->withErrors(['email' => 'Email ou mot de passe incorrect']);
     }
 
-//  Déconnexion des utilisateurs
+//  Déconnexion des utilisateurss
 public function logout()
 {
     Auth::logout();

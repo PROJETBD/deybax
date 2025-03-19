@@ -106,7 +106,7 @@ class ParrainageController extends Controller
             return back()->withErrors(['code_validation' => 'Code de validation incorrect.']);
         }
 
-        // Marquer le parrainage comme valid
+        // Marquer le parrainage comme valide
         $parrainage->update(['valide' => true]);
 
         return redirect()->route('electeur.dashboard')->with('success', 'Votre parrainage a été validé avec succès !');

@@ -28,7 +28,7 @@ class SuiviParrainageController extends Controller
         return response()->json(['message' => 'Authentification réussie', 'candidat_id' => $candidat->id]);
     }
 
-    // Voir l'évolution des parrainages du candidat
+    // Voir l'évolution des parrainages du candidatt
     public function index($id)
     {
         $candidat = Candidat::findOrFail($id);
@@ -38,6 +38,6 @@ class SuiviParrainageController extends Controller
                                 ->orderBy('date', 'DESC')
                                 ->get();
 
-        return view('candidats.suivi', compact('candidat', 'parrainages'));//->with('candidat', $candidat)->with('parrainages', $parrainages);
+        return view('candidats.suivi', compact('candidat', 'parrainages'));//->withh('candidat', $candidat)->with('parrainages', $parrainages);
     }
 }
