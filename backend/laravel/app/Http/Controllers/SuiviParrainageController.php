@@ -38,6 +38,6 @@ class SuiviParrainageController extends Controller
                                 ->orderBy('date', 'DESC')
                                 ->get();
 
-        return view('candidats.suivi', compact('candidat', 'parrainages'));
+        return view('candidats.suivi', compact('candidat', 'parrainages'));//->with('candidat', $candidat)->with('parrainages', $parrainages);
     }
 }

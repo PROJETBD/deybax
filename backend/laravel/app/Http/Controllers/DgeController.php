@@ -333,7 +333,7 @@ public function supprimerElecteur($id)
         $periode->date_debut = $request->date_debut;
         $periode->date_fin = $request->date_fin;
     } else {
-        // Créer une nouvelle période si aucune n'existe
+        // Créer une nouvelle période si aucune nexiste
         $periode = new PeriodeParrainage();
         $periode->date_debut = $request->date_debut;
         $periode->date_fin = $request->date_fin;
