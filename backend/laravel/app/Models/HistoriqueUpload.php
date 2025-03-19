@@ -9,21 +9,20 @@ class HistoriqueUpload extends Model
 {
     use HasFactory;
 
-    protected $table = 'historique_uploads';
-
     protected $fillable = [
-        'utilisateur_id',
-        'date_upload',
-        'adresse_ip',
-        'empreinte_sha256',
-        'status'
+        'utilisateur', 
+        'ip', 
+        'checksum', 
+        'date_upload', 
+        'status',
     ];
-
-    public $timestamps = false;
-
-    // Relation avec l'utilisateur (supposé être un agent DGE)
-    public function utilisateur()
-    {
-        return $this->belongsTo(User::class, 'utilisateur_id');
-    }
+    public function user()
+{
+    return $this->belongsTo(User::class, 'user_id');
+}
+// ✅ Définition de la relation avec `ElecteursErreurs`
+public function electeursErreurs()
+{
+    return $this->hasMany(ElecteursErreurs::class, 'tentative_upload_id');
+}
 }

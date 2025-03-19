@@ -12,14 +12,11 @@ class ElecteurTemp extends Model
     protected $table = 'electeurs_temp';
 
     protected $fillable = [
-        'numero_cni',
-        'numero_electeur',
-        'nom',
-        'prenom',
-        'date_naissance',
-        'lieu_naissance',
-        'sexe',
+        'numero_carte_electeur',
+        'numero_cin',
+        'nom_famille',
         'bureau_vote',
-        'status_validation',
+        'telephone',
+        'email',
     ];
 }

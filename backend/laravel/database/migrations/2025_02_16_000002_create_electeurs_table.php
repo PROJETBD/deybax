@@ -5,23 +5,22 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    public function up()
+    public function up(): void
     {
         Schema::create('electeurs', function (Blueprint $table) {
             $table->id();
-            $table->string('numero_cni')->unique();//numero carte nationale d'identité
-            $table->string('numero_electeur')->unique();//numero electeur
-            $table->string('nom');//nom
-            $table->string('prenom');//prenom
-            $table->date('date_naissance');//date de naissance
-            $table->string('lieu_naissance');//lieu de naissance
-            $table->enum('sexe', ['M', 'F']);//sexe
-            $table->string('bureau_vote');//bureau de vote
+            $table->string('numero_carte_electeur')->unique();
+            $table->string('numero_cni')->unique();
+            $table->string('nom_famille');
+            $table->string('bureau_vote');
+            $table->string('telephone')->unique();
+            $table->string('email')->unique();
+            $table->string('code_authentification')->nullable(); // Code envoyé par mail/SMS
             $table->timestamps();
         });
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('electeurs');
     }

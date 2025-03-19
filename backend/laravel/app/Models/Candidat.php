@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,26 +9,29 @@ class Candidat extends Model
 {
     use HasFactory;
 
-    protected $table = 'candidats';
-
     protected $fillable = [
-        'electeur_id',
-        'nom_parti',
+        'numero_carte',
+        'nom',
+        'prenom',
+        'date_naissance',
+        'email',
+        'telephone',
+        'parti_politique',
         'slogan',
         'photo',
-        'couleurs',
+        'couleur_1',
+        'couleur_2',
+        'couleur_3',
         'url_info',
     ];
 
-    // Relation avec l'électeur
-    public function electeur()
+    // Relation avec les codes de sécurité
+    public function codesSecurite()
     {
-        return $this->belongsTo(Electeur::class);
+        return $this->hasMany(CodeSecurite::class);
     }
-
-    // Relation avec les parrainages
     public function parrainages()
     {
-        return $this->hasMany(Parrainage::class);
+        return $this->hasMany(Parrainage::class, 'candidat_id');
     }
 }
