@@ -28,7 +28,7 @@ class Candidat extends Model
     // Relation avec les codes de sécurité
     public function codesSecurite()
     {
-        return $this->hasMany(CodeSecurite::class);
+        return $this->hasMany(CodeSecurite::class);//, 'candidat_id');
     }
     public function parrainages()
     {
