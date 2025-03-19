@@ -25,7 +25,7 @@ class Candidat extends Model
         'url_info',
     ];
 
-    // Relation avec les codes de sécurité
+    // Relation avec les codes de sécurite
     public function codesSecurite()
     {
         return $this->hasMany(CodeSecurite::class);//, 'candidat_id');

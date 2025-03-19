@@ -20,7 +20,7 @@ class HistoriqueUpload extends Model
 {
     return $this->belongsTo(User::class, 'user_id');
 }
-// ✅ Définition de la relation avec `ElecteursErreurs`
+// Définition de la relation avec `ElecteursErreurs`
 public function electeursErreurs()
 {
     return $this->hasMany(ElecteursErreurs::class, 'tentative_upload_id');

@@ -22,6 +22,6 @@ class Parrain extends Model
 
     public function parrainage()
     {
-        return $this->hasOne(Parrainage::class);
+        return $this->hasOne(Parrainage::class);//parrainage
     }
 }

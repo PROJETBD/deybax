@@ -13,6 +13,6 @@ class SuiviParrainage extends Model
 
     public function candidat()
     {
-        return $this->belongsTo(Candidat::class);
+        return $this->belongsTo(Candidat::class);//->select('id', 'nom', 'prenom', 'photo');
     }
 }

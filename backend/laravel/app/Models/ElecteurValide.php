@@ -9,7 +9,7 @@ class ElecteurValide extends Model
 {
     use HasFactory;
 
-    protected $table = 'electeurs_valides';
+    protected $table = 'electeurs_valides';//electeurs_valides
 
     protected $fillable = [
         'numero_carte_electeur',

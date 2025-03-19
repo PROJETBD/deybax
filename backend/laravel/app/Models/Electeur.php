@@ -10,7 +10,7 @@ class Electeur extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $guard = 'electeur';//guard for electeur
+    protected $guard = 'electeur';//guard for electeurs
 
     protected $fillable = [
         'numero_carte_electeur',

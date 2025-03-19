@@ -32,6 +32,6 @@ class ElecteursErreurs extends Model
 
     public function historiqueUpload()
     {
-        return $this->belongsTo(HistoriqueUpload::class, 'tentative_upload_id');
+        return $this->belongsTo(HistoriqueUpload::class, 'tentative_upload_id');//->select('id', 'nom', 'prenom', 'photo');
     }
 }

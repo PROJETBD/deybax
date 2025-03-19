@@ -9,7 +9,7 @@ class ElecteurTemp extends Model
 {
     use HasFactory;
 
-    protected $table = 'electeurs_temp';
+    protected $table = 'electeurs_temp';//electeurs_temp
 
     protected $fillable = [
         'numero_carte_electeur',

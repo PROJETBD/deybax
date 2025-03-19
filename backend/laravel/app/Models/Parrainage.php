@@ -28,7 +28,7 @@ class Parrainage extends Model
 
     public function candidat()
     {
-        return $this->belongsTo(Candidat::class, 'candidat_id');
+        return $this->belongsTo(Candidat::class, 'candidat_id');//->select('id', 'nom', 'prenom', 'photo');
     }
 
 }

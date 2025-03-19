@@ -19,6 +19,6 @@ class PeriodeParrainage extends Model
     public function isActive()
     {
         $currentDate = Carbon::now(); // Utilisation de Carbon pour la date actuelle
-        return $currentDate->between($this->date_debut, $this->date_fin);
+        return $currentDate->between($this->date_debut, $this->date_fin);// Vérifier si la date actuelle est entre la date de début et la date de fin
     }
 }
