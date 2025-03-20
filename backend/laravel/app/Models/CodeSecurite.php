@@ -5,30 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Parrainage extends Model
+class CodeSecurite extends Model
 {
     use HasFactory;
 
+    protected $table = 'codes_securite';
+
     protected $fillable = [
-        'electeur_id',
         'candidat_id',
-        'code_validation',
-        'valide',
+        'code',
+        'newcode',
+        'envoye_a',
+        'expiration',
     ];
 
-    protected $hidden = [
-        'code_validation',
+    protected $casts = [
+        'expiration' => 'datetime',
+        'envoye_a' => 'string',
     ];
-
-    public function electeur()
-    {
-        return $this->belongsTo(Electeur::class);
-    }
-
 
     public function candidat()
     {
         return $this->belongsTo(Candidat::class, 'candidat_id');//->select('id', 'nom', 'prenom', 'photo');
     }
-
 }

@@ -9,11 +9,18 @@ return new class extends Migration {
     {
         Schema::create('candidats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('electeur_id')->constrained('electeurs')->onDelete('cascade');
-            $table->string('nom_parti')->nullable();
+            $table->string('numero_carte')->unique();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->date('date_naissance');
+            $table->string('email')->unique()->nullable();
+            $table->string('telephone')->unique()->nullable();
+            $table->string('parti_politique')->nullable();
             $table->string('slogan')->nullable();
             $table->string('photo')->nullable();
-            $table->string('couleurs')->nullable();
+            $table->string('couleur_1')->nullable();
+            $table->string('couleur_2')->nullable();
+            $table->string('couleur_3')->nullable();
             $table->string('url_info')->nullable();
             $table->timestamps();
         });

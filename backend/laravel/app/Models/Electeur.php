@@ -2,35 +2,30 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Electeur extends Model
+class Electeur extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
-    protected $table = 'electeurs';
-    
+    protected $guard = 'electeur';//guard for electeurs
+
     protected $fillable = [
+        'numero_carte_electeur',
         'numero_cni',
-        'numero_electeur',
-        'nom',
-        'prenom',
-        'date_naissance',
-        'lieu_naissance',
-        'sexe',
+        'nom_famille',
         'bureau_vote',
+        'telephone',
+        'email',
+        'password',
+        'code_authentification',
     ];
 
-    // Relation avec les candidats
-    public function candidat()
-    {
-        return $this->hasOne(Candidat::class);
-    }
-
-    // Relation avec les parrains
-    public function parrain()
-    {
-        return $this->hasOne(Parrain::class);
-    }
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'code_authentification',
+    ];
 }

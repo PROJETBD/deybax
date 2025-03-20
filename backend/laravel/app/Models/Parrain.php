@@ -9,25 +9,19 @@ class Parrain extends Model
 {
     use HasFactory;
 
-    protected $table = 'parrains';
-
     protected $fillable = [
-        'electeur_id',
+        'numero_carte',
+        'numero_cni',
+        'nom',
+        'bureau_de_vote',
         'email',
         'telephone',
         'code_authentification',
+        'code_verification',
     ];
 
-    // Relation avec l'électeur
-    public function electeur()
+    public function parrainage()
     {
-        return $this->belongsTo(Electeur::class);
-    }
-
-    // Relation avec les parrainages
-    public function parrainages()
-    {
-        return $this->hasMany(Parrainage::class);
+        return $this->hasOne(Parrainage::class);//parrainage
     }
 }
-
